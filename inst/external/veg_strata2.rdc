@@ -1,0 +1,39 @@
+file format : IDRISI Raster A.1
+file title  : Vegetation Deviation 2003 Strata 0-238
+data type   : byte
+file type   : binary
+columns     : 256
+rows        : 256
+ref. system : clabs_ae
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : 5144000.0000000
+max. X      : 7192000.0000000
+min. Y      : 1488000.0000000
+max. Y      : 3536000.0000000
+pos'n error : unknown
+resolution  : 8000
+min. value  : 0
+max. value  : 238
+display min : 0
+display max : 238
+value units : classes
+value error : unknown
+flag value  : none
+flag def'n  : none
+legend cats : 13
+code      0 : Mask
+code      9 : Angola
+code     33 : Botswana
+code     38 : Congo
+code    125 : Lesotho
+code    146 : Malawi
+code    149 : Mozambique
+code    150 : Nambia
+code    203 : Swaziland
+code    219 : Tanzania
+code    236 : South Africa
+code    237 : Zambia
+code    238 : Zimbabwe
+lineage     : This file was created by the POLYRAS module with the command line:
+lineage     : D:\GIS_Accuracy\Africa_Countries_Strata\world_nations_clabs.vct*D:\GIS_Accuracy\Africa_Countries_Strata\Strata_Map.rst*1

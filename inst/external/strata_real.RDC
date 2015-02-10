@@ -1,0 +1,26 @@
+file format : IDRISI Raster A.1
+file title  : 
+data type   : real
+file type   : binary
+columns     : 5
+rows        : 2
+ref. system : plane
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : 0.0000000
+max. X      : 5.0000000
+min. Y      : 0.0000000
+max. Y      : 2.0000000
+pos'n error : unknown
+resolution  : unknown
+min. value  : 0.0000000
+max. value  : 2.0000000
+display min : 0.0000000
+display max : 2.0000000
+value units : unspecified
+value error : unknown
+flag value  : none
+flag def'n  : none
+legend cats : 0
+lineage     : This file was created by the SSTIDRIS module with the command line: 
+lineage     : S:\AA GRID\strata.TXT*S:\AA GRID\strata_real.rst*2*2*5*PLANE*m*1.0*0*5*0*2

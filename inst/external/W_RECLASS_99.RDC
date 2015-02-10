@@ -1,0 +1,29 @@
+file format : IDRISI Raster A.1
+file title  : Window from RECLASS_99 c: 330 r: 148 to c: 585 r: 403
+data type   : byte
+file type   : binary
+columns     : 256
+rows        : 256
+ref. system : spc83ma1
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : 168720.0000000
+max. X      : 176400.0000000
+min. Y      : 897230.0000000
+max. Y      : 904910.0000000
+pos'n error : unknown
+resolution  : unknown
+min. value  : 1
+max. value  : 3
+display min : 1
+display max : 3
+value units : unspecified
+value error : unknown
+flag value  : 0
+flag def'n  : out of study area
+legend cats : 3
+code      1 : Natural
+code      2 : Built
+code      3 : Agriculture
+lineage     : This file was created by the WINDOW module with the command line: 
+lineage     : c:\thesis\working\RECLASS_99.rst*C:\THESIS\WORKING\W_RECLASS_99.rst*1*330*148*585*403*0

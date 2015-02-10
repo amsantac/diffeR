@@ -1,0 +1,30 @@
+file format : IDRISI Raster A.1
+file title  : Mask for Example where eastern pixels have a value of 1 and western pixels have 0
+data type   : byte
+file type   : binary
+columns     : 4
+rows        : 4
+ref. system : plane
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : -8.0000000
+max. X      : 8.0000000
+min. Y      : -8.0000000
+max. Y      : 8.0000000
+pos'n error : unknown
+resolution  : unknown
+min. value  : 0
+max. value  : 1
+display min : 0
+display max : 1
+value units : unspecified
+value error : unknown
+flag value  : none
+flag def'n  : none
+legend cats : 0
+lineage     : This file was created by the RECLASS module with the command line: 
+lineage     : I*C:\Gil\clark\geog279\geog279_2011\geog279a1\example_x1.rst*C:\Gil\clark\geog279\geog279_2011\geog279a1\example_mask2.rst*3*C:\Gil\clark\geog279\geog279_2011\geog279a1\idrtemp.rcl*1
+lineage     : File C:\Gil\clark\geog279\geog279_2011\geog279a1\idrtemp.rcl contains the following:
+lineage     :     0 -8 0
+lineage     :     1 0 9
+lineage     :     -9999

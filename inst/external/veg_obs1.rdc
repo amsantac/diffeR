@@ -1,0 +1,24 @@
+file format : IDRISI Raster A.1
+file title  : veg_obs1
+data type   : real
+file type   : binary
+columns     : 256
+rows        : 256
+ref. system : plane
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : 5144000
+max. X      : 7192000
+min. Y      : 1488000
+max. Y      : 3536000
+pos'n error : unknown
+resolution  : 8000
+min. value  : -1.70854
+max. value  : 0.200922
+display min : -1.70854
+display max : 0.200922
+value units : unspecified
+value error : unknown
+flag value  : -3.4e+38
+flag def'n  : no data
+legend cats : 0

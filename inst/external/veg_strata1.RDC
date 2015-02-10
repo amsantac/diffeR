@@ -1,0 +1,56 @@
+file format : IDRISI Raster A.1
+file title  : Vegetation Deviation 2003 Strata 1-13
+data type   : byte
+file type   : binary
+columns     : 256
+rows        : 256
+ref. system : clabs_ae
+ref. units  : m
+unit dist.  : 1.0000000
+min. X      : 5144000.0000000
+max. X      : 7192000.0000000
+min. Y      : 1488000.0000000
+max. Y      : 3536000.0000000
+pos'n error : unknown
+resolution  : 8000
+min. value  : 0
+max. value  : 13
+display min : 0
+display max : 13
+value units : categories
+value error : unknown
+flag value  : 0
+flag def'n  : background
+legend cats : 14
+code      0 : Mask
+code      1 : Angola
+code      2 : Botswana
+code      3 : Congo
+code      4 : Lesotho
+code      5 : Malawi
+code      6 : Mozambique
+code      7 : Nambia
+code      8 : Swaziland
+code      9 : Tanzania
+code     10 : South Africa
+code     11 : Zambia
+code     12 : Zimbabwe
+code     13 : Other
+lineage     : This file was created by the RECLASS module with the command line:
+lineage     : I*C:\Users\rpontius\Gil\clark\geog279\geog279_2013\geog279assign1\veg_strata0.rst*C:\Users\rpontius\Gil\clark\geog279\geog279_2013\geog279assign1\veg_strata1.rst*3*C:\Users\rpontius\Gil\clark\geog279\geog279_2013\geog279assign1\idrtemp.rcl*1
+lineage     : File C:\Users\rpontius\Gil\clark\geog279\geog279_2013\geog279assign1\idrtemp.rcl contains the following:
+lineage     : 0 1 6
+lineage     : 13 6 7
+lineage     : 1 7 8
+lineage     : 2 8 9
+lineage     : 3 9 10
+lineage     : 4 10 11
+lineage     : 5 11 12
+lineage     : 6 12 13
+lineage     : 7 13 14
+lineage     : 8 14 15
+lineage     : 9 15 16
+lineage     : 10 16 17
+lineage     : 11 17 18
+lineage     : 12 18 19
+lineage     : -9999

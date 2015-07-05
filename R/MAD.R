@@ -94,7 +94,7 @@ MAD <- function(grid1, grid2, strata=NULL, eval="original"){
                 colnames(eg3) <- c("Resolution", "Component", "MAD")
                 Resolution=0; Component=0
 		print(ggplot(eg3, aes(x=Resolution, y=MAD, group=Component, 
-								fill=Component)) + geom_area(position="stack") 
+								fill=Component)) + theme_bw() + geom_area(position="stack") 
 		                        + scale_x_continuous(breaks=c(1:nrow(resa)), labels=c(resa$Multiples)) 
 				                + labs(x = "Resolution (Multiples of initial)", y= "Mean Absolute Deviation (MAD)"))
 	}

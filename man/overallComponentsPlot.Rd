@@ -8,7 +8,7 @@ Overall Components plot
 create the Overall Components plot from the comparison between a comparison map (or map at time \emph{t}) and a reference map (or map at time \emph{t}+1)
 }
 \usage{
-overallComponentsPlot(comp, ref)
+overallComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL)
 }
 
 \arguments{
@@ -18,6 +18,10 @@ object of class RasterLayer corresponding to a comparison map (or map at time \e
   \item{ref}{
 object of class RasterLayer corresponding to a reference map (or map at time \emph{t}+1)
 }
+  \item{ctmatrix}{
+matrix representing a square contingency table between a comparison variable (rows) and a reference variable (columns)
+}
+
 }
 \value{
 a stacked barplot showing the quantity, exchange and shift components of difference between the comparison map (or map at time \emph{t}) and the reference map (or map at time \emph{t}+1)
@@ -32,6 +36,9 @@ Pontius Jr., R.G., Millones, M. 2011. \emph{Death to Kappa: birth of quantity di
 comp <- raster(system.file("external/comparison.rst", package="diffeR"))
 ref <- raster(system.file("external/reference.rst", package="diffeR"))
 overallComponentsPlot(comp, ref)
+
+ctmat <- crosstabm(comp, ref)
+overallComponentsPlot(ctmatrix = ctmat)
 }
 
 \keyword{ spatial }

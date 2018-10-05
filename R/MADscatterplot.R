@@ -1,4 +1,4 @@
-MADscatterplot <- function(grid1, grid2, strata=NULL){
+MADscatterplot <- function(grid1, grid2, strata = NULL){
 
 	# if the user does not provide a strata map, create one filled with 1's
 	if(is.null(strata)) {

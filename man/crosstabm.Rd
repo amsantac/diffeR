@@ -8,7 +8,7 @@ create a contingency table between a comparison raster map (rows) and a referenc
 create a contingency table, also called cross-tabulated matrix, between a comparison raster map (rows), or map at time \emph{t}, and a reference raster map (columns), or map at time \emph{t}+1
 }
 \usage{
-crosstabm(comp, ref, percent=FALSE, population=NULL)
+crosstabm(comp, ref, percent = FALSE, population = NULL)
 }
 
 \arguments{

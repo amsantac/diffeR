@@ -9,7 +9,7 @@ Provides a method to compare the quantity difference and allocation difference b
 The output provides a stacked graph and an accompanying numerical table for the Mean Absolute Deviation (MAD) for the difference due to quantity, the difference due to stratum-level allocation, and difference due to pixel-level allocation.  The output also indicates which image has a smaller average.  A scatterplot indicating the distribution of values in relation to the 1:1 line can be produced with \code{\link{MADscatterplot}}
 }
 \usage{
-MAD(grid1, grid2, strata=NULL, eval="original")
+MAD(grid1, grid2, strata = NULL, eval = "original")
 }
 
 \arguments{

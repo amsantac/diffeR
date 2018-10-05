@@ -8,7 +8,7 @@ MAD scatterplot
 Generates a scatterplot indicating the distribution of values from two images in relation to the 1:1 line
 }
 \usage{
-MADscatterplot(grid1, grid2, strata=NULL)
+MADscatterplot(grid1, grid2, strata = NULL)
 }
 
 \arguments{

@@ -1,5 +1,5 @@
 crosstabm <- 
-function (comp, ref, percent = FALSE, population=NULL) 
+function (comp, ref, percent = FALSE, population = NULL) 
 {
     cr1 <- crosstab(comp, ref)
     if (any(is.na(cr1[, 1]))) {

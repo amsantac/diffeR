@@ -8,7 +8,7 @@ produces membership values for each category in the input raster at a specified 
 Calculates membership values for each category in the input raster at a specified aggregated resolution
 }
 \usage{
-memberships(grid, fact=2)
+memberships(grid, fact = 2)
 }
 
 \arguments{

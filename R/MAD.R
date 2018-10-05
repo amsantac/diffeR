@@ -1,4 +1,4 @@
-MAD <- function(grid1, grid2, strata=NULL, eval="original"){
+MAD <- function(grid1, grid2, strata = NULL, eval = "original"){
 	
 	# if the user does not provide a strata map, create one filled with 1's
 	if(is.null(strata)) {

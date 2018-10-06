@@ -10,12 +10,15 @@
 \alias{overallShiftD}
 \alias{quantityDj}
 \alias{shiftDj}
+\alias{omissionj}
+\alias{comissionj}
+\alias{agreementj}
 
 \title{
 Overall difference metrics and difference metrics at the category level or between pairs of categories
 }
 \description{
-Overall difference metrics (overallAllocD, overallDiff, overallDiffCatj, overallExchangeD, overallQtyD, overallShiftD) and difference metrics at the category level (exchangeDj, quantityDj, shiftDj) or between pairs of categories (exchangeDij) calculated using a square contingency table derived from the crosstabulation between a comparison variable (or variable at time \emph{t}), and a reference variable (or variable at time \emph{t}+1) 
+Overall difference metrics (overallAllocD, overallDiff, overallDiffCatj, overallExchangeD, overallQtyD, overallShiftD) and difference metrics at the category level (exchangeDj, quantityDj, shiftDj, omissionj, commisionj, agreementj) or between pairs of categories (exchangeDij) calculated using a square contingency table derived from the crosstabulation between a comparison variable (or variable at time \emph{t}), and a reference variable (or variable at time \emph{t}+1) 
 }
 \usage{
 exchangeDij(ctmatrix)
@@ -28,6 +31,9 @@ overallQtyD(ctmatrix)
 overallShiftD(ctmatrix)
 quantityDj(ctmatrix)
 shiftDj(ctmatrix)
+omissionj(ctmatrix)
+comissionj(ctmatrix)
+agreementj(ctmatrix)
 }
 
 \arguments{
@@ -39,7 +45,7 @@ matrix representing a square contingency table between a comparison variable (ro
 \value{
 \code{exchangeDij} returns a matrix containing exchange occurring between pairs of categories from the comparison variable and the reference variable. Exchange is shown in the lower triangle of the output matrix. 
 
-\code{exchangeDj} returns a matrix representing a square contingency table between a comparison variable (rows) and a reference variable (columns).
+\code{exchangeDj} returns a numeric vector containing the exchange difference between the comparison variable and the reference variable at the category level.
 
 \code{overallAllocD} returns the overall allocation difference between the comparison variable and the reference variable. 
 
@@ -55,7 +61,13 @@ matrix representing a square contingency table between a comparison variable (ro
 
 \code{quantityDj} returns a numeric vector containing the quantity difference between the comparison variable and the reference variable at the category level. 
 
-\code{shiftDj} returns a numeric vector containing the shift difference between the comparison variable and the reference variable at the category level. 
+\code{shiftDj} returns a numeric vector containing the shift difference between the comparison variable and the reference variable at the category level.
+
+\code{omissionj} returns a numeric vector containing the omission disagreement between the comparison variable and the reference variable at the category level.
+
+\code{comissionj} returns a numeric vector containing the comission disagreement between the comparison variable and the reference variable at the category level.
+
+\code{agreementj} returns a numeric vector containing the agreement between the comparison variable and the reference variable at the category level.
 
 For all the functions above, the output values are given in the same units as \code{ctmatrix}.
 }
@@ -81,6 +93,12 @@ Exchange consists of a transition from category \emph{i} to category \emph{j} in
 \code{quantityDj} calculates quantity difference at the category level from a square contingency table derived from the crosstabulation between a comparison variable (or variable at time \emph{t}), and a reference variable (or variable at time \emph{t}+1). Quantity difference is defined as the amount of difference between the reference variable and a comparison variable that is due to the less than maximum match in the proportions of the categories.
 
 \code{shiftDj} calculates shift difference at the category level from a contingency table derived from the crosstabulation between a comparison variable (or variable at time \emph{t}), and a reference variable (or variable at time \emph{t}+1). Shift refers to the difference remaining after subtracting quantity difference and exchange from the overall difference.
+
+\code{omissionj} calculates omission error at the category level from a contingency table derived from the crosstabulation between a comparison variable (or variable at time \emph{t}), and a reference variable (or variable at time \emph{t}+1). Omission error refers to observations in the reference variable that were classified in a category other than their true or known category, in other words, observations of a known category that were excluded from that category due to misclassification. 
+
+\code{comissionj} calculates comission error at the category level from a contingency table derived from the crosstabulation between a comparison variable (or variable at time \emph{t}), and a reference variable (or variable at time \emph{t}+1). Commission error refers to observations that were incorrectly classified and do not belong in the category in which they were assigned according to the classification. 
+
+\code{agreementj} calculates agreement at the category level from a contingency table derived from the crosstabulation between a comparison variable (or variable at time \emph{t}), and a reference variable (or variable at time \emph{t}+1). 
 }
 
 \references{
@@ -106,6 +124,9 @@ overallQtyD(ctmatCompRef)
 overallShiftD(ctmatCompRef)
 quantityDj(ctmatCompRef)
 shiftDj(ctmatCompRef)
+omissionj(ctmatCompRef)
+comissionj(ctmatCompRef)
+agreementj(ctmatCompRef)
 }
 
 \keyword{ internal }

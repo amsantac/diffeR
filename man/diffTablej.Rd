@@ -38,8 +38,8 @@ ctmatCompRef <- crosstabm(comp, ref)
 diffTablej(ctmatCompRef)
 
 # Adjustment to population assumming a stratified random sampling
-(population <- matrix(c(1,2,3,2000,4000,6000), ncol=2))
-ctmatCompRef <- crosstabm(comp, ref, percent=TRUE, population = population)
+(population <- matrix(c(1,2,3,2000,4000,6000), ncol = 2))
+ctmatCompRef <- crosstabm(comp, ref, percent = TRUE, population = population)
 diffTablej(ctmatCompRef)
 }
 

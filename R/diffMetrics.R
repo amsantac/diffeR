@@ -1,55 +1,73 @@
 exchangeDij <- function(ctmatrix){
   exchDij <- 2 * pmin(ctmatrix, t(ctmatrix))
-  exchDij.lt <- lower.tri(exchDij) * exchDij
-  return(exchDij.lt)
+  res <- lower.tri(exchDij) * exchDij
+  return(res)
 }
 
 exchangeDj <- function(ctmatrix){
   exchDij <- 2 * pmin(ctmatrix, t(ctmatrix))
   exchDij.lt <- lower.tri(exchDij) * exchDij
-  exchDj <- apply(exchDij.lt, 1, sum) + apply(exchDij.lt, 2, sum)
-  return(exchDj)
+  res <- apply(exchDij.lt, 1, sum) + apply(exchDij.lt, 2, sum)
+  return(res)
 }
 
 overallAllocD <- function(ctmatrix){
-  overallallocd <- overallDiff(ctmatrix) - overallQtyD(ctmatrix)
-  return(overallallocd)
+  res <- overallDiff(ctmatrix) - overallQtyD(ctmatrix)
+  return(res)
 }
 
 overallDiff <- function(ctmatrix){
-  overalldiff <- sum(ctmatrix) - sum(diag(ctmatrix))
-  return(overalldiff)
+  res <- sum(ctmatrix) - sum(diag(ctmatrix))
+  return(res)
 }
 
 overallDiffCatj <- function(ctmatrix){
-  overalldiffj <- apply(ctmatrix, 1, sum) + apply(ctmatrix, 2, sum) - 2 * diag(ctmatrix)
-  return(overalldiffj)
+  res <- apply(ctmatrix, 1, sum) + apply(ctmatrix, 2, sum) - 2 * diag(ctmatrix)
+  return(res)
 }
 
 overallExchangeD <- function(ctmatrix){
   Exchange <- exchangeDj(ctmatrix)
-  overallexcd <- sum(Exchange) / 2
-  return(overallexcd)
+  res <- sum(Exchange) / 2
+  return(res)
 }
 
 overallQtyD <- function(ctmatrix){
   qtydj <- abs(apply(ctmatrix, 1, sum) - apply(ctmatrix, 2, sum))
-  overallqtyd <- sum(qtydj) / 2
-  return(overallqtyd)
+  res <- sum(qtydj) / 2
+  return(res)
 }
 
 overallShiftD <- function(ctmatrix){
   Shift <- shiftDj(ctmatrix)
-  overallshfd <- sum(Shift) / 2
-  return(overallshfd)
+  res <- sum(Shift) / 2
+  return(res)
 }
 
 quantityDj <- function(ctmatrix){
-  qtydj <- abs(apply(ctmatrix, 1, sum) - apply(ctmatrix, 2, sum))
-  return(qtydj)
+  res <- abs(apply(ctmatrix, 1, sum) - apply(ctmatrix, 2, sum))
+  return(res)
 }
 
 shiftDj <- function(ctmatrix){
-  shiftdj <- overallDiffCatj(ctmatrix) - quantityDj(ctmatrix) - exchangeDj(ctmatrix)
-  return(shiftdj)
+  res <- overallDiffCatj(ctmatrix) - quantityDj(ctmatrix) - exchangeDj(ctmatrix)
+  return(res)
 }
+
+omissionj <- function(ctmatrix){
+  res <- apply(ctmatrix, 2, sum) - diag(ctmatrix)
+  return(res)
+}
+
+comissionj <- function(ctmatrix){
+  res <- apply(ctmatrix, 1, sum) - diag(ctmatrix)
+  names(res) <- colnames(ctmatrix)
+  return(res)
+}
+
+agreementj <- function(ctmatrix){
+  res <- apply(ctmatrix, 1, sum) - comissionj(ctmatrix)
+  names(res) <- colnames(ctmatrix)
+  return(res)
+}
+

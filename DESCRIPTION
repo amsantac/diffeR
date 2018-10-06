@@ -6,7 +6,7 @@ Date: 2018-10-04
 Author: Robert Gilmore Pontius Jr. <rpontius@clarku.edu>, Ali Santacruz <asantacruzdelgado@clarku.edu>
 Maintainer: Ali Santacruz <amsantac@unal.edu.co>
 Depends: R (>= 2.14.0), rgdal, raster, methods, ggplot2
-Imports: graphics, grDevices
+Imports: graphics, grDevices, reshape2
 Description: Metrics of difference for comparing pairs of maps representing real or categorical variables at original and multiple resolutions.
 License: GPL (>= 2)
 URL: http://amsantac.co/software.html

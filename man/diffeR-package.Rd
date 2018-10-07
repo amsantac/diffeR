@@ -24,5 +24,5 @@ Maintainer: Ali Santacruz <amsantac@unal.edu.co>
 \keyword{ package }
 \keyword{ spatial }
 \seealso{
-\code{\link{composite}} 
+\code{\link{differenceMetrics}} 
 }

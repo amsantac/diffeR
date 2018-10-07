@@ -41,7 +41,7 @@ a stacked barplot showing the omission and comission components of difference be
 Pontius Jr., R.G., Millones, M. 2011. \emph{Death to Kappa: birth of quantity disagreement and allocation disagreement for accuracy assessment}. International Journal of Remote Sensing 32 (15), 4407-4429.
 }
 \seealso{
-\code{\link{diffTablej}}
+\code{\link{differenceMetrics}}
 }
 \examples{
 comp <- raster(system.file("external/comparison.rst", package="diffeR"))

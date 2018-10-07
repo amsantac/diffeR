@@ -5,7 +5,7 @@ diffeR R package
 
 The diffeR R package can be installed from CRAN, the official R packages repository, or from this GitHub repository.
 
-The official release of the diffeR package can be found on [CRAN](http://cran.r-project.org/package=diffeR). To install from CRAN enter the following command line in R (on Windows OS, run R as Administrator): 
+The official release of the diffeR package can be found on [CRAN](http://cran.r-project.org/package=diffeR). To install from CRAN enter the following command line in R: 
 
 ```{r}
 install.packages("diffeR")

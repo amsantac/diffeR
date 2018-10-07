@@ -21,7 +21,6 @@ overallComponentsPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, unit
   par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
   graphics::plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n")
   legend(x = 0.1, y = 0.3, c(colnames(resT)[3:1]), bty = "n", 
-         fill = c(rgb(230,230,230, maxColorValue=255), rgb(174,174,174, maxColorValue=255), 
-                  rgb(77,77,77, maxColorValue=255)))
+         fill = c("#e6e6e6", "#aeaeae", "#4d4d4d"))
   par(old.par)
 }

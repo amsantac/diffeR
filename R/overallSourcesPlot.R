@@ -1,6 +1,7 @@
 overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, population = NULL){
   
-  ylab = "Difference Size (percentage of domain)"
+  ylab <- ifelse(is.null(ctmatrix), "Difference Size (percentage of domain)", 
+                 ifelse(is.null(units), "Difference Size (units)", paste0("Difference Size (", units, ")")))
   
   if(!is.null(comp) & !is.null(ref)){
     ctmatrix <- crosstabm(comp, ref, percent = TRUE, population = NULL)
@@ -12,16 +13,10 @@ overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units =
     resT <- data.frame(Comission = comissionj(ctmatrix), Omission = omissionj(ctmatrix), Category = colnames(ctmatrix), 
                        stringsAsFactors = FALSE)
     rownames(resT) <- NULL
-    ylab <- ifelse(is.null(units), "Difference Size (units)", paste0("Difference Size (", units, ")"))
   }
   
   resT2 <- melt(resT, id.var = "Category", variable.name = "differenceType")
-  #resT2 <- gather(resT, differenceType, value, Comission:Omission)
-  
+
   ggplot() + geom_bar(aes_(x = ~differenceType, y = ~value, fill = ~Category), data = resT2, stat = "identity") + 
-    labs(x = "Type of Difference", y = ylab) + theme_classic() + scale_y_continuous(expand = c(0, 0))
+    labs(x = "Type of Difference", y = ylab, fill = '') + theme_classic() + scale_y_continuous(expand = c(0, 0))
 }
-
-
-
-

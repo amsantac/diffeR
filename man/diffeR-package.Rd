@@ -10,8 +10,8 @@ Metrics of difference for comparing pairs of variables or pairs of maps represen
 \tabular{ll}{
 Package: \tab diffeR\cr
 Type: \tab Package\cr
-Version: \tab 0.0-5\cr
-Date: \tab 2018-10-07\cr
+Version: \tab 0.0-6\cr
+Date: \tab 2018-12-07\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }

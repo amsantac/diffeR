@@ -1,4 +1,4 @@
-categorySourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, population = NULL){
+categorySourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", units = NULL, population = NULL){
   
   ylab <- ifelse(is.null(ctmatrix), "Percentage of Domain", 
                  ifelse(is.null(units), "units", units)) 
@@ -12,6 +12,7 @@ categorySourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units 
     if(!is.null(population)) ctmatrix <- sample2pop(ctmatrix, population)
     resT <- data.frame(Comission = comissionj(ctmatrix), Agreement = agreementj(ctmatrix), Omission = omissionj(ctmatrix), 
                        Category = colnames(ctmatrix), stringsAsFactors = FALSE)
+    if(analysis == "change") colnames(resT)[1:3] <- c("Loss", "Persistence", "Gain")
     rownames(resT) <- NULL
   }
   

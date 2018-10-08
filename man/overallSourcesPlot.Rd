@@ -8,8 +8,8 @@ Overall Sources plot
 If comparison and reference (raster) maps are provided, this function creates the Overall Sources plot from the comparison between the comparison map (or map at time \emph{t}) and the reference map (or map at time \emph{t}+1). If a square contingency table (matrix) is provided instead of raster maps, then this function creates the Overall Sources plot from the comparison between the comparison variable (or variable at time \emph{t}) and the reference variable (or variable at time \emph{t}+1).
 }
 \usage{
-overallSourcesPlot(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, 
-                   population = NULL)
+overallSourcesPlot(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", 
+                    units = NULL, population = NULL)
 }
 
 \arguments{
@@ -21,6 +21,9 @@ object of class RasterLayer corresponding to a reference map (or map at time \em
 }
   \item{ctmatrix}{
 matrix representing a square contingency table between a comparison variable (rows) and a reference variable (columns). See Details below
+}
+  \item{analysis}{
+character string indicating type of analysis, either "error" (default) or "change"
 }
   \item{units}{
 character string indicating units of \code{ctmatrix}

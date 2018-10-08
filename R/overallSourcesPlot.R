@@ -1,4 +1,4 @@
-overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, population = NULL){
+overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", units = NULL, population = NULL){
   
   ylab <- ifelse(is.null(ctmatrix), "Difference Size (percentage of domain)", 
                  ifelse(is.null(units), "Difference Size (units)", paste0("Difference Size (", units, ")")))
@@ -12,6 +12,7 @@ overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units =
     if(!is.null(population)) ctmatrix <- sample2pop(ctmatrix, population)
     resT <- data.frame(Comission = comissionj(ctmatrix), Omission = omissionj(ctmatrix), Category = colnames(ctmatrix), 
                        stringsAsFactors = FALSE)
+    if(analysis == "change") colnames(resT)[1:2] <- c("Loss", "Gain")
     rownames(resT) <- NULL
   }
   

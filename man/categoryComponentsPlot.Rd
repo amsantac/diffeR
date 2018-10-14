@@ -9,7 +9,7 @@ If comparison and reference (raster) maps are provided, this function creates th
 }
 \usage{
 categoryComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, 
-                       population = NULL)
+                       population = NULL, fontSize = NULL)
 }
 
 \arguments{
@@ -27,6 +27,8 @@ optional; character string indicating units of \code{ctmatrix}
 }
   \item{population}{
 optional; an \emph{n} x 2 matrix provided to correct the sample count to population count in the square contingency table. See Details below}
+  \item{fontSize}{
+text size (in pts)}
 }
 
 \details{

@@ -1,4 +1,4 @@
-categorySourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", units = NULL, population = NULL){
+categorySourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", units = NULL, population = NULL, fontSize = NULL){
   
   ylab <- ifelse(is.null(ctmatrix), "Percentage of Domain", 
                  ifelse(is.null(units), "units", units)) 
@@ -22,5 +22,5 @@ categorySourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analys
     labs(x = "Category", y = ylab, fill = '') + theme_classic() + scale_y_continuous(expand = c(0, 0)) +
     theme(legend.position="top") + coord_flip() + guides(fill = guide_legend(reverse = TRUE)) +
     # scale_fill_manual(values=c("#ff0000", "#0000ff", "#008000"))
-    scale_fill_manual(values=c("#aeaeae", "#4d4d4d", "#e6e6e6"))
+    scale_fill_manual(values=c("#aeaeae", "#4d4d4d", "#e6e6e6")) + theme(text = element_text(size = fontSize))
 }

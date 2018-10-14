@@ -1,4 +1,4 @@
-overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", units = NULL, population = NULL){
+overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", units = NULL, population = NULL, fontSize = NULL){
   
   ylab <- ifelse(is.null(ctmatrix), "Difference Size (percentage of domain)", 
                  ifelse(is.null(units), "Difference Size (units)", paste0("Difference Size (", units, ")")))
@@ -19,5 +19,6 @@ overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysi
   resT2 <- melt(resT, id.var = "Category", variable.name = "differenceType")
 
   ggplot() + geom_bar(aes_(x = ~differenceType, y = ~value, fill = ~Category), data = resT2, stat = "identity") + 
-    labs(x = "Type of Difference", y = ylab, fill = '') + theme_classic() + scale_y_continuous(expand = c(0, 0))
+    labs(x = "Type of Difference", y = ylab, fill = '') + theme_classic() + scale_y_continuous(expand = c(0, 0)) +
+    theme(text = element_text(size = fontSize))
 }

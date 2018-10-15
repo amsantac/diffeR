@@ -9,7 +9,7 @@ If comparison and reference (raster) maps are provided, this function creates th
 }
 \usage{
 overallSourcesPlot(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", 
-                    units = NULL, population = NULL, fontSize = NULL)
+                    units = NULL, population = NULL, fontSize = NULL, colorValues = NULL)
 }
 
 \arguments{
@@ -29,9 +29,14 @@ character string indicating type of analysis, either "error" (default) or "chang
 character string indicating units of \code{ctmatrix}
 }
   \item{population}{
-an \emph{n} x 2 matrix provided to correct the sample count to population count in the square contingency table. See Details below}
+an \emph{n} x 2 matrix provided to correct the sample count to population count in the square contingency table. See Details below
+}
   \item{fontSize}{
-text size (in pts)}
+text size (in pts)
+}
+  \item{colorValues}{
+a set of aesthetic values to map data values to. If this is a named vector, then the values will be matched based on the names. If unnamed, values will be matched in order (usually alphabetical) with the limits of the scale. Any data values that don't match will be given \code{na.value}.
+}
 }
 
 \details{

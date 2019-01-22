@@ -9,7 +9,8 @@ If comparison and reference (raster) maps are provided, this function creates th
 }
 \usage{
 overallSourcesPlot(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", 
-                    units = NULL, population = NULL, fontSize = NULL, colorValues = NULL)
+                    units = NULL, population = NULL, fontSize = NULL, colorValues = NULL, 
+                    breaks = waiver(), labels = waiver(), limits = NULL)
 }
 
 \arguments{
@@ -37,6 +38,27 @@ text size (in pts)
   \item{colorValues}{
 a set of aesthetic values to map data values to. If this is a named vector, then the values will be matched based on the names. If unnamed, values will be matched in order (usually alphabetical) with the limits of the scale. Any data values that don't match will be given \code{na.value}.
 }
+  \item{breaks}{One of:
+\itemize{
+\item \code{NULL} for no breaks
+\item \code{waiver()} for the default breaks computed by the
+transformation object
+\item A numeric vector of positions
+\item A function that takes the limits as input and returns breaks
+as output
+}}
+  \item{labels}{One of:
+\itemize{
+\item \code{NULL} for no labels
+\item \code{waiver()} for the default labels computed by the
+transformation object
+\item A character vector giving labels (must be same length as \code{breaks})
+\item A function that takes the breaks as input and returns labels
+as output
+}}
+  \item{limits}{
+A numeric vector of length two providing limits of the scale.
+Use \code{NA} to refer to the existing minimum or maximum.}
 }
 
 \details{

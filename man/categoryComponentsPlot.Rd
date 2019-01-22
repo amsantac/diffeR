@@ -9,7 +9,8 @@ If comparison and reference (raster) maps are provided, this function creates th
 }
 \usage{
 categoryComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, 
-                       population = NULL, fontSize = NULL)
+                       population = NULL, fontSize = NULL, breaks = waiver(), 
+                       labels = waiver(), limits = NULL)
 }
 
 \arguments{
@@ -29,6 +30,27 @@ optional; character string indicating units of \code{ctmatrix}
 optional; an \emph{n} x 2 matrix provided to correct the sample count to population count in the square contingency table. See Details below}
   \item{fontSize}{
 text size (in pts)}
+  \item{breaks}{One of:
+\itemize{
+\item \code{NULL} for no breaks
+\item \code{waiver()} for the default breaks computed by the
+transformation object
+\item A numeric vector of positions
+\item A function that takes the limits as input and returns breaks
+as output
+}}
+  \item{labels}{One of:
+\itemize{
+\item \code{NULL} for no labels
+\item \code{waiver()} for the default labels computed by the
+transformation object
+\item A character vector giving labels (must be same length as \code{breaks})
+\item A function that takes the breaks as input and returns labels
+as output
+}}
+  \item{limits}{
+A numeric vector of length two providing limits of the scale.
+Use \code{NA} to refer to the existing minimum or maximum.}
 }
 
 \details{

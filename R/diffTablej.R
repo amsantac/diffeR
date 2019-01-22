@@ -1,4 +1,4 @@
-diffTablej <- function(ctmatrix, digits = 0){
+diffTablej <- function(ctmatrix, digits = 0, analysis = "error"){
   
   if(!is(ctmatrix, "matrix")) stop("ctmatrix must be of class matrix")
   
@@ -16,6 +16,7 @@ diffTablej <- function(ctmatrix, digits = 0){
   resT <- round(rbind(resT, Overall), digits)
   resT <- cbind(c(colnames(ctmatrix), "Overall"), resT)
   colnames(resT)[1] <- "Category"
+  if(analysis == "change") colnames(resT)[2:4] <- c("Gain", "Persistence", "Loss")
   rownames(resT) <- NULL
   return(resT)
 }

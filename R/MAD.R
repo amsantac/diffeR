@@ -3,7 +3,8 @@ MAD <- function(grid1, grid2, strata = NULL, eval = "original"){
 	# if the user does not provide a strata map, create one filled with 1's
 	if(is.null(strata)) {
 		strata <- grid1
-		strata[] <- 1
+		# strata[] <- 1
+		strata[!is.na(strata)] <- 1
 	}
 	# calculation of deviations
 	dev <- grid1 - grid2
@@ -20,20 +21,10 @@ MAD <- function(grid1, grid2, strata = NULL, eval = "original"){
 	
 	# for each stratum, a boolean map is created
 	# it produces a multilayer raster, each stratum in a different layer
-	# including another layer for NA, if NA values are present
-	strataM2 <- strataM
-	lustrM <- length(unique(strataM))
-	for (i in 1:lustrM){
-		fun1 <- function(x) { x[x!=unique(x)[i]] <- 0; return(x) }
-		tmp1 <- calc(strataM2, fun1)
-		fun2 <- function(x) { x[x!=0] <- 1; return(x) }
-		tmp2 <- calc(tmp1, fun2)
-		strataM <- stack(strataM, tmp2)
-	}
-	strataM <- dropLayer(strataM, 1)
+	strataM <- layerize(raster(strataM, 1))
 
 	# if there are NA values in the strata map, that layer is dropped
-	if(any(is.na(unique(strataM)))) strataM <- dropLayer(strataM, which(is.na(unique(strataM))))
+	# if(any(is.na(unique(strataM)))) strataM <- dropLayer(strataM, which(is.na(unique(strataM))))
 
 	# Count of nozeros and no NA values
 	nozeros <- cellStats((calc(strataM, sum)), sum)

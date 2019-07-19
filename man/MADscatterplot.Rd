@@ -19,7 +19,7 @@ object of class RasterLayer corresponding to the first image
 object of class RasterLayer corresponding to the second image 
 }
   \item{strata}{
-object of class RasterLayer corresponding to the mask or strata image
+object of class RasterLayer corresponding to the mask or strata image. Zero values are taken as no data (i.e., NA) 
 }
 }
 \value{

@@ -1,8 +1,8 @@
 Package: diffeR
 Type: Package
 Title: Metrics of Difference for Comparing Pairs of Maps or Pairs of Variables
-Version: 0.0-6
-Date: 2019-01-21
+Version: 0.0-7
+Date: 2019-07-19
 Author: Robert Gilmore Pontius Jr. <rpontius@clarku.edu>, Ali Santacruz <asantacruzdelgado@clarku.edu>
 Maintainer: Ali Santacruz <amsantac@unal.edu.co>
 Depends: R (>= 2.14.0), rgdal, raster, methods, ggplot2, reshape2
@@ -10,5 +10,5 @@ Imports: graphics, grDevices
 Description: Metrics of difference for comparing pairs of variables or pairs of maps representing real or categorical variables at original and multiple resolutions.
 License: GPL (>= 2)
 BugReports: https://github.com/amsantac/diffeR/issues
-URL: http://amsantac.co/software.html, https://github.com/amsantac/diffeR
+URL: https://github.com/amsantac/diffeR
 Encoding: latin1

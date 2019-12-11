@@ -4,7 +4,7 @@ composite <- function (comp, ref, factor){
     nCompCats <- length(unique(comp))
 
     if (nCompCats != nRefCats) 
-        stop("number of layers in input rasters must be equal")
+        stop("set of unique pixel values in input rasters must be equal")
 
     conf.matrix <- matrix(nrow = nCompCats, ncol = nRefCats)
 

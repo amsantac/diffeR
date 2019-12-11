@@ -5,6 +5,7 @@ differenceMR <- function(comp, ref, eval = "multiple", percent = TRUE, fact = 2,
   if(eval=="original"){
     resT <- as.data.frame(cbind(res(comp)[1], overallQtyD(ctmatrix), overallExchangeD(ctmatrix), overallShiftD(ctmatrix), overallDiff(ctmatrix)))
     colnames(resT) <- c("Resolution", "Quantity", "Exchange", "Shift", "Overall")
+    if(percent == FALSE) resT[,2:5] <- resT[,2:5]/100
   }
   
   if(eval=="multiple"){

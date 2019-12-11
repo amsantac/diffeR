@@ -11,7 +11,7 @@ Metrics of difference for comparing pairs of variables or pairs of maps represen
 Package: \tab diffeR\cr
 Type: \tab Package\cr
 Version: \tab 0.0-7\cr
-Date: \tab 2019-07-19\cr
+Date: \tab 2019-12-11\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 BugReports: \tab https://github.com/amsantac/diffeR/issues\cr 

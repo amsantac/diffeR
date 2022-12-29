@@ -8,16 +8,17 @@ Overall Components plot
 If comparison and reference (raster) maps are provided, this function creates the Overall Components plot from the comparison between the comparison map (or map at time \emph{t}) and the reference map (or map at time \emph{t}+1). If a square contingency table (matrix) is provided instead of raster maps, then this function creates the Overall Components plot from the comparison between the comparison variable (or variable at time \emph{t}) and the reference variable (or variable at time \emph{t}+1).
 }
 \usage{
-overallComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, 
-                      population = NULL)
+overallComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL, 
+                      units = NULL, population = NULL, 
+                      graphics_system = 'graphics')
 }
 
 \arguments{
   \item{comp}{
-object of class RasterLayer corresponding to a comparison map (or map at time \emph{t}). See Details below
+object of class SpatRaster corresponding to a comparison map (or map at time \emph{t}). See Details below
 }
   \item{ref}{
-object of class RasterLayer corresponding to a reference map (or map at time \emph{t}+1). See Details below
+object of class SpatRaster corresponding to a reference map (or map at time \emph{t}+1). See Details below
 }
   \item{ctmatrix}{
 matrix representing a square contingency table between a comparison variable (rows) and a reference variable (columns).. See Details below
@@ -27,6 +28,9 @@ character string indicating units of \code{ctmatrix}
 }
   \item{population}{
 an \emph{n} x 2 matrix provided to correct the sample count to population count in the square contingency table. See Details below
+}
+  \item{graphics_system}{
+character string indicating the graphics system for creating the plot, either "graphics" (for base R graphics system) or "ggplot2"
 }
 }
 \details{
@@ -41,12 +45,9 @@ a stacked barplot showing the quantity, exchange and shift components of differe
 \references{
 Pontius Jr., R.G., Millones, M. 2011. \emph{Death to Kappa: birth of quantity disagreement and allocation disagreement for accuracy assessment}. International Journal of Remote Sensing 32 (15), 4407-4429.
 }
-\seealso{
-\code{\link{differenceMetrics}}
-}
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 overallComponentsPlot(comp, ref)
 
 ctmat <- crosstabm(comp, ref)

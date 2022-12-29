@@ -13,13 +13,13 @@ composite(comp, ref, factor)
 
 \arguments{
   \item{comp}{
-object of class RasterLayer corresponding to a comparison map (or map at time \emph{t})
+object of class SpatRaster corresponding to a comparison map (or map at time \emph{t})
 }
   \item{ref}{
-object of class RasterLayer corresponding to a reference map (or map at time \emph{t}+1)
+object of class SpatRaster corresponding to a reference map (or map at time \emph{t}+1)
 }
   \item{factor}{
-integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor). See \code{raster} package for details
+integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor). See \code{aggregate()} in the \code{terra} package for details
 }
 }
 \details{
@@ -35,9 +35,9 @@ Kuzera, K., Pontius Jr., R.G. 2008. \emph{Importance of matrix construction for 
 \code{\link{memberships}}
 }
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
-composite(comp, ref, factor=2)
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
+composite(comp, ref, factor = 2)
 }
 
 \keyword{ spatial }

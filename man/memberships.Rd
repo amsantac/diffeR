@@ -13,10 +13,10 @@ memberships(grid, fact = 2)
 
 \arguments{
   \item{grid}{
-object of class RasterLayer
+object of class SpatRaster
 }
   \item{fact}{
-integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor). See \code{raster} package for details
+positive integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor). See \code{aggregate()} in the \code{terra} package for details
 }
 }
 \value{
@@ -26,10 +26,10 @@ a RasterBrick object containing membership values for each category in the input
 \code{\link{composite}} 
 }
 \examples{
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 plot(ref)
-memb.ref <- memberships(ref, fact=2)
-names(memb.ref) <- c("ref.A", "ref.B", "ref.C")
+memb.ref <- memberships(ref, fact = 2)
+names(memb.ref) <- c("ref.1", "ref.2", "ref.3")
 plot(memb.ref)
 }
 

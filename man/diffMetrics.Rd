@@ -110,8 +110,8 @@ Pontius Jr., R.G., Santacruz, A. 2014. \emph{Quantity, exchange and shift compon
 \code{\link{diffTablej}}
 }
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 ctmatCompRef <- crosstabm(comp, ref)
 
 exchangeDij(ctmatCompRef)

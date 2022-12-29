@@ -17,10 +17,14 @@ overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysi
     rownames(resT) <- NULL
   }
   
-  resT2 <- melt(resT, id.var = "Category", variable.name = "differenceType")
-
-  g <- ggplot() + geom_bar(aes_(x = ~differenceType, y = ~value, fill = ~Category), data = resT2, stat = "identity") + 
-    labs(x = "Type of Difference", y = ylab, fill = '') + theme_classic() + 
+  resT2 <- pivot_longer(resT, cols = 1:2, names_to = "differenceType", values_to = "value")
+  
+  # keep aes_() for passing CRAN checks
+  g <- ggplot() + 
+    geom_bar(data = resT2, aes_(x = ~differenceType, y = ~value, fill = ~Category),
+             stat = "identity") + 
+    labs(x = "Type of Difference", y = ylab, fill = '') + 
+    theme_classic() + 
     scale_y_continuous(expand = c(0, 0), breaks = breaks, labels = labels, limits = limits) +
     theme(text = element_text(size = fontSize))
   if(!is.null(colorValues)) g <-  g + scale_fill_manual(values = colorValues)

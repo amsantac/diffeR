@@ -1,5 +1,5 @@
 memberships <- function(grid, fact = 2){
-  layers <- layerize(grid)
+  layers <- segregate(grid)
   membership <- aggregate(layers, fact=fact, fun=mean)
   return(membership) 
 }

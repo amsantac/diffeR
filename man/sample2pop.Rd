@@ -28,17 +28,18 @@ matrix representing a population-adjusted square contingency table for the cross
 \code{\link{crosstabm}}
 }
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 
 # Sample square contingency table
 (ctmatCompRef <- crosstabm(comp, ref))
 
 # Population-adjusted square contingency table
-(population <- matrix(c(1,2,3,2000,4000,6000), ncol=2))
+(population <- matrix(c(1, 2, 3, 2000, 4000, 6000), ncol = 2))
 sample2pop(ctmatCompRef, population = population)
 
-# The square contingency table can also be adjusted directly using the crosstabm function
+# The square contingency table can also be adjusted directly using the 
+# crosstabm function
 crosstabm(comp, ref, population = population)
 }
 

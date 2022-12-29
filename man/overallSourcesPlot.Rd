@@ -8,17 +8,19 @@ Overall Sources plot
 If comparison and reference (raster) maps are provided, this function creates the Overall Sources plot from the comparison between the comparison map (or map at time \emph{t}) and the reference map (or map at time \emph{t}+1). If a square contingency table (matrix) is provided instead of raster maps, then this function creates the Overall Sources plot from the comparison between the comparison variable (or variable at time \emph{t}) and the reference variable (or variable at time \emph{t}+1).
 }
 \usage{
-overallSourcesPlot(comp = NULL, ref = NULL, ctmatrix = NULL, analysis = "error", 
-                    units = NULL, population = NULL, fontSize = NULL, colorValues = NULL, 
-                    breaks = waiver(), labels = waiver(), limits = NULL)
+overallSourcesPlot(comp = NULL, ref = NULL, ctmatrix = NULL, 
+                   analysis = "error", units = NULL, 
+                   population = NULL, fontSize = NULL, 
+                   colorValues = NULL, breaks = waiver(), 
+                   labels = waiver(), limits = NULL)
 }
 
 \arguments{
   \item{comp}{
-object of class RasterLayer corresponding to a comparison map (or map at time \emph{t}). See Details below
+object of class SpatRaster corresponding to a comparison map (or map at time \emph{t}). See Details below
 }
   \item{ref}{
-object of class RasterLayer corresponding to a reference map (or map at time \emph{t}+1). See Details below
+object of class SpatRaster corresponding to a reference map (or map at time \emph{t}+1). See Details below
 }
   \item{ctmatrix}{
 matrix representing a square contingency table between a comparison variable (rows) and a reference variable (columns). See Details below
@@ -73,12 +75,9 @@ a stacked barplot showing the omission and comission components of difference be
 \references{
 Pontius Jr., R.G., Millones, M. 2011. \emph{Death to Kappa: birth of quantity disagreement and allocation disagreement for accuracy assessment}. International Journal of Remote Sensing 32 (15), 4407-4429.
 }
-\seealso{
-\code{\link{differenceMetrics}}
-}
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 overallSourcesPlot(comp, ref)
 
 ctmat <- crosstabm(comp, ref)

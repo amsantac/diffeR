@@ -8,17 +8,18 @@ Category Components plot
 If comparison and reference (raster) maps are provided, this function creates the Category Components plot from the comparison between the comparison map (or map at time \emph{t}) and the reference map (or map at time \emph{t}+1). If a square contingency table (matrix) is provided instead of raster maps, then this function creates the Category Components plot from the comparison between the comparison variable (or variable at time \emph{t}) and the reference variable (or variable at time \emph{t}+1). 
 }
 \usage{
-categoryComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, 
-                       population = NULL, fontSize = NULL, breaks = waiver(), 
+categoryComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL, 
+                       units = NULL, population = NULL, 
+                       fontSize = NULL, breaks = waiver(), 
                        labels = waiver(), limits = NULL)
 }
 
 \arguments{
   \item{comp}{
-object of class RasterLayer corresponding to a comparison map (or map at time \emph{t}). See Details below
+object of class SpatRaster corresponding to a comparison map (or map at time \emph{t}). See Details below
 }
   \item{ref}{
-object of class RasterLayer corresponding to a reference map (or map at time \emph{t}+1). See Details below
+object of class SpatRaster corresponding to a reference map (or map at time \emph{t}+1). See Details below
 }
   \item{ctmatrix}{
 matrix representing a square contingency table between a comparison variable or variable at time \emph{t} (rows) and a reference variable or variable at time \emph{t}+1 (columns). See Details below
@@ -69,8 +70,8 @@ Pontius Jr., R.G., Millones, M. 2011. \emph{Death to Kappa: birth of quantity di
 \code{\link{diffTablej}}
 }
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 categoryComponentsPlot(comp, ref)
 
 ctmat <- crosstabm(comp, ref)

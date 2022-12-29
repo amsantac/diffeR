@@ -13,10 +13,10 @@ crosstabm(comp, ref, percent = FALSE, population = NULL)
 
 \arguments{
   \item{comp}{
-object of class RasterLayer corresponding to the comparison map, or map at time \emph{t}
+object of class SpatRaster corresponding to the comparison map, or map at time \emph{t}
 }
   \item{ref}{
-object of class RasterLayer corresponding to the reference map, or map at time \emph{t}+1
+object of class SpatRaster corresponding to the reference map, or map at time \emph{t}+1
 }
   \item{percent}{
 logical. If TRUE, output values are given as percentage. If FALSE, output values are given in pixel counts
@@ -35,16 +35,16 @@ a matrix showing the cross-tabulation between the comparison map (or map at time
 \code{\link{memberships}}
 }
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 crosstabm(comp, ref)
 
 # Population-adjusted square contingency table
-(population <- matrix(c(1,2,3,2000,4000,6000), ncol=2))
+(population <- matrix(c(1, 2, 3, 2000, 4000, 6000), ncol = 2))
 crosstabm(comp, ref, population = population)
 
 # Population-adjusted square contingency table, output as percentage
-crosstabm(comp, ref, percent=TRUE, population = population)
+crosstabm(comp, ref, percent = TRUE, population = population)
 }
 
 \keyword{ spatial }

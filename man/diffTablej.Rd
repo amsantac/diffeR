@@ -31,17 +31,14 @@ Pontius Jr., R.G., Millones, M. 2011. \emph{Death to Kappa: birth of quantity di
 
 Pontius Jr., R.G., Santacruz, A. 2014. \emph{Quantity, exchange and shift components of difference in a square contingency table}. International Journal of Remote Sensing 35 (21), 7543-7554.
 }
-\seealso{
-\code{\link{differenceMetrics}}
-}
 \examples{
-comp <- raster(system.file("external/comparison.rst", package="diffeR"))
-ref <- raster(system.file("external/reference.rst", package="diffeR"))
+comp <- rast(system.file("external/comparison.rst", package = "diffeR"))
+ref <- rast(system.file("external/reference.rst", package = "diffeR"))
 ctmatCompRef <- crosstabm(comp, ref)
 diffTablej(ctmatCompRef)
 
-# Adjustment to population assumming a stratified random sampling
-(population <- matrix(c(1,2,3,2000,4000,6000), ncol = 2))
+# Adjustment to population assuming a stratified random sampling
+(population <- matrix(c(1, 2, 3, 2000, 4000, 6000), ncol = 2))
 ctmatCompRef <- crosstabm(comp, ref, percent = TRUE, population = population)
 diffTablej(ctmatCompRef)
 }

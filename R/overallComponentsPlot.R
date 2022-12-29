@@ -1,4 +1,5 @@
-overallComponentsPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, population = NULL){
+overallComponentsPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, population = NULL,
+                                  graphics_system = 'graphics'){
   
   ylab <- "Difference Size (percentage of domain)"
   
@@ -13,14 +14,36 @@ overallComponentsPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, unit
     ylab <- ifelse(is.null(units), "Difference Size (units)", paste0("Difference Size (", units, ")"))
   }
   
-  old.par <- par(no.readonly = TRUE)
-  par(oma = c(0, 0, 0, 14))
+  resT2 <- pivot_longer(resT, cols = everything(), names_to = "differenceType", values_to = "value")
+  resT2$differenceType <- factor(resT2$differenceType, levels = c('Shift', 'Exchange', 'Quantity'))
   
-  barplot(t(resT), ylab = ylab)
+  resT2$diff <- "diff"
   
-  par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
-  graphics::plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n")
-  legend(x = 0.1, y = 0.3, c(colnames(resT)[3:1]), bty = "n", 
-         fill = c("#e6e6e6", "#aeaeae", "#4d4d4d"))
-  par(old.par)
+  if(graphics_system == 'ggplot2'){
+    
+    # keep aes_() for passing CRAN checks
+    ggplot() + 
+      geom_bar(data = resT2, aes_(x = ~diff, y = ~value, fill = ~differenceType),
+               stat = 'identity', col = 'black') + 
+      labs(x = NULL, y = ylab, fill = '') + 
+      theme_classic()+ 
+      scale_y_continuous(expand = c(0, 0)) +
+      scale_fill_manual(values = c(Shift = "#e6e6e6", Exchange = "#aeaeae", Quantity = "#4d4d4d")) +
+      theme(axis.line.x = element_blank(),
+            axis.ticks.x = element_blank(),
+            axis.text.x = element_blank())
+    
+  } else if(graphics_system == 'graphics'){
+    
+    old.par <- par(no.readonly = TRUE)
+    par(oma = c(0, 0, 0, 14))
+    
+    barplot(t(resT), ylab = ylab)
+    
+    par(fig = c(0, 1, 0, 1), oma = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), new = TRUE)
+    graphics::plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n")
+    legend(x = 0.1, y = 0.3, c(colnames(resT)[3:1]), bty = "n",
+           fill = c("#e6e6e6", "#aeaeae", "#4d4d4d"))
+    par(old.par)
+  }
 }

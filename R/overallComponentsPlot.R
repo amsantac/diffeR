@@ -1,5 +1,5 @@
 overallComponentsPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, units = NULL, population = NULL,
-                                  graphics_system = 'graphics'){
+                                  graphics_system = 'ggplot2'){
   
   ylab <- "Difference Size (percentage of domain)"
   

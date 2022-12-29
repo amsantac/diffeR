@@ -5,8 +5,8 @@ Version: 0.0-7
 Date: 2022-12-29
 Author: Robert Gilmore Pontius Jr. <rpontius@clarku.edu>, Ali Santacruz <amsantac@unal.edu.co>
 Maintainer: Ali Santacruz <amsantac@unal.edu.co>
-Depends: R (>= 2.14.0), terra, methods, ggplot2, tidyr, tidyselect
-Imports: graphics, grDevices
+Depends: R (>= 2.14.0), terra, methods, ggplot2
+Imports: graphics, grDevices, tidyr, tidyselect, rlang
 Description: Metrics of difference for comparing pairs of variables or pairs of maps representing real or categorical variables at original and multiple resolutions.
 License: GPL (>= 2)
 BugReports: https://github.com/amsantac/diffeR/issues

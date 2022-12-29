@@ -17,7 +17,7 @@ MADscatterplot <- function(grid1, grid2, strata = NULL){
 	d <- data.frame(grid1 = values(grid1)[, 1], 
 	                grid2 = values(grid2)[, 1], 
 	                strata = values(strata)[, 1])
-	ggplot(d, aes(x = grid1,y = grid2)) + 
+	ggplot(d, aes(x = .data$grid1,y = .data$grid2)) + 
 	  geom_point() + 
 	  coord_fixed(ratio = 1) + 
 	  geom_abline(colour = "red") + 

@@ -18,11 +18,10 @@ categoryComponentsPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, uni
   
   resT2 <- pivot_longer(resT, cols = 1:3, names_to = "differenceType", values_to = "value")
   resT2$differenceType <- factor(resT2$differenceType, levels = c('Shift', 'Exchange', 'Quantity'))
-  
-  # keep aes_() for passing CRAN checks
-  ggplot() + 
-    geom_bar(data = resT2, aes_(x = ~Category, y = ~value, fill = ~differenceType),
-             colour = "black", stat = "identity") + 
+
+  ggplot(data = resT2, 
+         aes(x = .data$Category, y = .data$value, fill = .data$differenceType)) + 
+    geom_bar(colour = "black", stat = "identity") + 
     labs(x = "Category", y = ylab, fill = '') + 
     theme_classic() + 
     scale_y_continuous(expand = c(0, 0), breaks = breaks, labels = labels, limits = limits) +

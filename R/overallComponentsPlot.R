@@ -21,10 +21,9 @@ overallComponentsPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, unit
   
   if(graphics_system == 'ggplot2'){
     
-    # keep aes_() for passing CRAN checks
-    ggplot() + 
-      geom_bar(data = resT2, aes_(x = ~diff, y = ~value, fill = ~differenceType),
-               stat = 'identity', col = 'black') + 
+    ggplot(data = resT2, 
+           aes(x = .data$diff, y = .data$value, fill = .data$differenceType)) + 
+      geom_bar(stat = 'identity', col = 'black') + 
       labs(x = NULL, y = ylab, fill = '') + 
       theme_classic()+ 
       scale_y_continuous(expand = c(0, 0)) +

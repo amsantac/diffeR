@@ -20,9 +20,9 @@ overallSourcesPlot <- function(comp = NULL, ref = NULL, ctmatrix = NULL, analysi
   resT2 <- pivot_longer(resT, cols = 1:2, names_to = "differenceType", values_to = "value")
   
   # keep aes_() for passing CRAN checks
-  g <- ggplot() + 
-    geom_bar(data = resT2, aes_(x = ~differenceType, y = ~value, fill = ~Category),
-             stat = "identity") + 
+  g <- ggplot(data = resT2, 
+              aes(x = .data$differenceType, y = .data$value, fill = .data$Category)) + 
+    geom_bar(stat = "identity") + 
     labs(x = "Type of Difference", y = ylab, fill = '') + 
     theme_classic() + 
     scale_y_continuous(expand = c(0, 0), breaks = breaks, labels = labels, limits = limits) +

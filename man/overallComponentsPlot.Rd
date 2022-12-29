@@ -10,7 +10,7 @@ If comparison and reference (raster) maps are provided, this function creates th
 \usage{
 overallComponentsPlot(comp = NULL, ref = NULL, ctmatrix = NULL, 
                       units = NULL, population = NULL, 
-                      graphics_system = 'graphics')
+                      graphics_system = 'ggplot2')
 }
 
 \arguments{
@@ -30,7 +30,7 @@ character string indicating units of \code{ctmatrix}
 an \emph{n} x 2 matrix provided to correct the sample count to population count in the square contingency table. See Details below
 }
   \item{graphics_system}{
-character string indicating the graphics system for creating the plot, either "graphics" (for base R graphics system) or "ggplot2"
+character string indicating the graphics system for creating the plot, either "ggplot2" (default) or "graphics" (for base R graphics system) 
 }
 }
 \details{

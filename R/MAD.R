@@ -97,7 +97,7 @@ MAD <- function(grid1, grid2, strata = NULL, eval = "original"){
   }
   
   # print the message indicating which grid has the lower mean
-  ifelse(mean(values(grid1), na.rm = TRUE) < mean(values(grid2), na.rm = TRUE), 
+  ifelse(mean(values(grid1, mat = FALSE), na.rm = TRUE) < mean(values(grid2, mat = FALSE), na.rm = TRUE), 
          print(paste("The mean of grid1 is less than the mean of grid2")), 
          print(paste("The mean of grid2 is less than the mean of grid1"))) 
   

@@ -2,7 +2,7 @@ Package: diffeR
 Type: Package
 Title: Metrics of Difference for Comparing Pairs of Maps or Pairs of Variables
 Version: 0.0-7
-Date: 2022-12-29
+Date: 2023-01-06
 Author: Robert Gilmore Pontius Jr. <rpontius@clarku.edu>, Ali Santacruz <amsantac@unal.edu.co>
 Maintainer: Ali Santacruz <amsantac@unal.edu.co>
 Depends: R (>= 2.14.0), terra, methods, ggplot2

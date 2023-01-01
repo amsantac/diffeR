@@ -16,7 +16,7 @@ MADscatterplot <- function(grid1, grid2, strata = NULL){
 	# create the table with the values to plot and create the plot
 	d <- data.frame(grid1 = values(grid1, mat = FALSE), 
 	                grid2 = values(grid2, mat = FALSE), 
-	                strata = values(strata, mat = FALSE)
+	                strata = values(strata, mat = FALSE))
 	ggplot(d, aes(x = .data$grid1,y = .data$grid2)) + 
 	  geom_point() + 
 	  coord_fixed(ratio = 1) + 

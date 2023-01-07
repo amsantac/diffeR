@@ -1,8 +1,11 @@
 crosstabm <- function (comp, ref, percent = FALSE, population = NULL){
   
   # create cross-tabulation table of comp and ref
-  cr1 <- crosstab(c(comp, ref), long = TRUE)
-  
+  if(inherits(comp, 'SpatRaster') & inherits(ref, 'SpatRaster')){
+    cr1 <- terra::crosstab(c(comp, ref), long = TRUE)
+  } else if(inherits(comp, 'RasterLayer') & inherits(ref, 'RasterLayer')) {
+    cr1 <- raster::crosstab(comp, ref, long = TRUE)
+  }
   # remove rows with missing values
   cr1 <- stats::na.omit(cr1) 
   

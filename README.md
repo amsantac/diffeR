@@ -23,7 +23,7 @@ Then install the diffeR package from Github using the devtools package:
 devtools::install_github("amsantac/diffeR")
 ```
 
-For help on the functions implemented in the diffeR package see the [reference manual](/diffeR-manual.pdf) or run the following command lines in R:
+For help on the functions implemented in the diffeR package see the [reference manual](/diffeR.pdf) or run the following command lines in R:
 
 ```{r}
 ?diffeR

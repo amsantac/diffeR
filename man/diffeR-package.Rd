@@ -1,5 +1,6 @@
 \name{diffeR-package}
 \alias{diffeR}
+\alias{diffeR-package}
 \docType{package}
 \title{
 Metrics of Difference for Comparing Pairs of Maps or Pairs of Variables
@@ -10,8 +11,8 @@ Metrics of difference for comparing pairs of variables or pairs of maps represen
 \tabular{ll}{
 Package: \tab diffeR\cr
 Type: \tab Package\cr
-Version: \tab 0.0-7\cr
-Date: \tab 2023-02-07\cr
+Version: \tab 0.0-8\cr
+Date: \tab 2023-08-21\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 BugReports: \tab https://github.com/amsantac/diffeR/issues\cr 

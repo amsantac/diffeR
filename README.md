@@ -1,6 +1,8 @@
 diffeR R package
 ======
 
+[![](https://cranlogs.r-pkg.org/badges/diffeR)](https://cran.rstudio.com/web/packages/diffeR/index.html)
+
 **Installation**
 
 The diffeR R package can be installed from CRAN, the official R packages repository, or from this GitHub repository.
